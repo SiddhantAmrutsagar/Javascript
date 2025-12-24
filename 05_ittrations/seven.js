@@ -1,0 +1,15 @@
+//
+
+const  myNumber = [1,2,3,4,5,6,7,8,9,10]
+
+// const newNums = myNumber.map((num) =>  {return num + 10})
+
+//**************************Chaining**************************
+const newNums = myNumber
+                .map((num)=> num * 10 )//result stored in array of this method will be provided to the next method
+                .map((num) => num + 1 )
+                .filter((num) => num >= 40)
+
+console.log(newNums);
+
+

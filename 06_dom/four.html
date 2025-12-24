@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom</title>
+</head>
+<body style="background-color: #212121; color: #fff;">
+    <ul class="language">
+        <li>Javascript</li>
+    </ul>
+</body>
+<script>
+    function addLanguage(langName){ //create a function that adds a language
+        const li = document.createElement('li') //create a li element to and save it in variable
+        li.innerText = `${langName}` // store the input string in the innerText of li
+        document.querySelector(".language").appendChild(li) //append this child element by selecting its parent element using query selector
+    }
+    addLanguage('python')
+    addLanguage('typescript')
+
+    function addOptiLanguage(langName){
+        const li = document.createElement('li'); //create a child element to add 
+        li.appendChild(document.createTextNode(langName))// create a textNode for that child element and add the input coming from the function call
+        document.querySelector('.language').appendChild(li)//fetch the parent element with the property and append the created child element in it
+    }
+
+    addOptiLanguage('golang')//run the function
+
+
+    //Edits
+
+    let secondLang = document.querySelector("li:nth-child(2)")//Select the element
+    console.log(secondLang)
+    const newli = document.createElement('li')
+    newli.textContent = "Mojo"
+    secondLang.replaceWith(newli)
+
+    //editing the outer element, the hole html tags
+    const firstLang = document.querySelector("li:first-child")
+    console.log(firstLang);
+    firstLang.outerHTML = '<li>typescript</li>'
+
+    const lastLang = document.querySelector('li:last-child')
+    lastLang.remove()   
+    
+</script>
+</html>
