@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async</title>
+</head>
+<body>
+    <h1>hello, world</h1>
+    <button id="stop">stop</button>
+</body>
+<script>
+
+    //handler is a function which do not have name sometimes callback
+    // setTimeout(function(){ //after 2sec it will print name only once
+    //     console.log("siddhant")
+    // }, 2000)
+    
+    const saySid = function(){ //after 2sec it will print name only once
+        console.log("siddhant")
+    }
+
+    const changeText = function(){
+        document.querySelector('h1').innerHTML = "This is Javascript"
+    }
+    const changeMe = setTimeout(changeText, 2000);
+    
+    // clearTimeout(changeMe)
+    document.querySelector('#stop').addEventListener('click', function(){
+        clearTimeout(changeMe)
+        console.log(("Stopped"));
+        
+    })
+</script>
+</html>
